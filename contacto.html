@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TMM - Contacto</title>
+		<link rel="icon" type="image/png" href="img/contacto.png">
+        <!-- Style Css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Javascript -->
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+		<header class="header">
+			<a href="index.html" class="logo"><img src="img/Logotipo-TMM.svg"></a>
+			<input class="menu-btn" type="checkbox" id="menu-btn" />
+			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			<ul class="menu">
+				<li><a href="index.html">Quiénes somos</a></li>
+				<li><a href="nuestros-proyectos.html">Nuestros proyectos</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+			</ul>
+		</header>        
+		<section class="contacto">
+            <article>
+                <div class="col-4 col-s-9 textH">
+				    <h1>Contacto</h1>
+                    <img src="img/contacto.png">
+                </div>
+				<div class="col-8 col-s-9 textH">
+                    <form id="contactForm">
+						<div class="form-group">
+						  <label for="nombre">Nombre</label>
+						  <input type="text" id="nombre" name="nombre" required>
+						</div>
+
+						<div class="form-group">
+						  <label for="email">E-mail</label>
+						  <input type="email" id="email" name="email" required>
+						</div>
+
+						<div class="form-group">
+						  <label for="mensaje">Cuéntanos tu idea</label>
+						  <textarea id="mensaje" name="mensaje" rows="12" required></textarea>
+						</div>
+
+						<button type="submit">Enviar</button>
+						<div id="mensaje-respuesta"></div>
+					</form>
+
+					  <script>
+						document.getElementById("contactForm").addEventListener("submit", function (e) {
+						  e.preventDefault(); // Evita que el formulario recargue la página
+
+						  const form = e.target;
+						  const formData = new FormData(form);
+						  const mensajeRespuesta = document.getElementById("mensaje-respuesta");
+
+						  fetch("php/script.php", {
+							method: "POST",
+							body: formData,
+						  })
+						  .then(response => {
+							if (!response.ok) {
+							  throw new Error("Error en la respuesta del servidor");
+							}
+							return response.text();
+						  })
+						  .then(data => {
+							mensajeRespuesta.style.color = "green";
+							mensajeRespuesta.textContent = "¡Mensaje enviado con éxito!";
+							form.reset(); // Limpia el formulario
+						  })
+						  .catch(error => {
+							mensajeRespuesta.style.color = "red";
+							mensajeRespuesta.textContent = "Hubo un error al enviar el mensaje.";
+							console.error("Error:", error);
+						  });
+						});
+					  </script>
+                </div>
+            </article>
+        </section>
+		<section class="newsletter">
+        </section>
+        <footer>
+            <div class="footer1">
+                 <div class="col-4 col-s-9">
+					<a href="index.html"><img src="img/tmm-footer.png"></a>
+					<a href="aviso-de-privacidad.html">Aviso de privacidad</a>
+				 </div>
+				 <div class="col-4 col-s-9 ipadNo"></div>
+				 <div class="col-4 col-s-9 redes">
+					<p>#SomosTodoMenosMiedo</p>
+					<a href="https://www.tiktok.com/@tmenosmiedo" target="_blank"><img src="img/tiktok.png"></a>
+					<a href="https://www.instagram.com/tmenosmiedo/" target="_blank"><img src="img/instagram.png"></a>
+				 </div>
+            </div>
+        </footer>
+    </body>
+</html>
