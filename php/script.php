@@ -1,6 +1,6 @@
 <?php
 // Configura aquí tu dirección de correo
-$destinatario = "alex88mtz@gmail.com";
+$destinatario = "tmenosmiedo@gmail.com";
 
 // Verifica que los datos llegaron por POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
