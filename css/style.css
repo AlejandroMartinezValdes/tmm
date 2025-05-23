@@ -1004,6 +1004,11 @@ footer .footer1 .redes a img{
     padding-left: 15px;
   }
   
+  .home1 article a img {
+    vertical-align: middle;
+    margin: 0 5px 2px 10px;
+  }
+  
 .home1 article p {
         display: block;
         font-size: 1.1em;
