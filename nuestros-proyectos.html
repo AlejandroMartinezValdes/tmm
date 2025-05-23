@@ -55,8 +55,7 @@
 						<input type="radio" name="radio-btn" id="radio1" checked>
 						<input type="radio" name="radio-btn" id="radio2">
 						<input type="radio" name="radio-btn" id="radio3">
-
-						<!-- Slides -->
+						<!-- Slides -->						
 						<div class="slides first">
 						  <div class="slide">
 							<a href="https://nofm-radio.com/" target="_blank"><img class="line1" src="img/fm.png"></a>
@@ -80,7 +79,11 @@
 							</div>
 						  </div>
 						</div>
-
+						<!-- Botones de flecha -->
+						<div class="nav-arrows">
+						  <button id="prev">&#10094;</button>
+						  <button id="next">&#10095;</button>
+						</div>
 						<!-- Manual navigation -->
 						<div class="navigation-manual">
 						  <label for="radio1" class="manual-btn"></label>
@@ -174,5 +177,21 @@
 				 </div>
             </div>
         </footer>
+		<script>
+		  const radios = document.querySelectorAll('input[name="radio-btn"]');
+		  const prevBtn = document.getElementById("prev");
+		  const nextBtn = document.getElementById("next");
+		  let currentIndex = 0;
+
+		  function updateSlide(index) {
+			if (index >= radios.length) index = 0;
+			if (index < 0) index = radios.length - 1;
+			radios[index].checked = true;
+			currentIndex = index;
+		  }
+
+		  nextBtn.addEventListener("click", () => updateSlide(currentIndex + 1));
+		  prevBtn.addEventListener("click", () => updateSlide(currentIndex - 1));
+		</script>
     </body>
 </html>

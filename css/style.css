@@ -613,6 +613,7 @@ article .textH{
     margin-inline-end: 0px;
     font-family: Montserrat-Medium;
     line-height: 1.55em;
+	max-width: 95%;
 }
 
 .home4 article .line1{
@@ -734,7 +735,7 @@ article .textH{
 }
     .slides {
       display: flex;
-      width: 300%;
+      width: 100%;
       transition: transform 0.5s ease-in-out;
     }
 
@@ -750,7 +751,7 @@ article .textH{
 }
 
 .slide div {
-    width: 25%;
+    width: 100%;
 }
 
 .slide img {
@@ -797,6 +798,37 @@ article .textH{
     #radio3:checked ~ .first {
       transform: translateX(-200%);
     }
+	
+.nav-arrows {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			transform: translateY(-50%);
+			pointer-events: none;
+		  }
+
+.nav-arrows button {
+    background: transparent;
+    color: #000;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 5px 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.3s;
+}
+
+.nav-arrows button:hover {
+    background: rgb(0 0 0 / 50%);
+    color: #fff;
+}
+
+		  .slider {
+			position: relative;
+			overflow: hidden;
+		  }
 
 footer .footer1 {
     padding: 0px 15px;
@@ -1092,6 +1124,7 @@ footer .footer1 .redes a img{
   
   .home4 article p {
     font-size: 0.9em;
+	max-width: 100%;
   }
   
   .home4 article .line1 {
@@ -1142,6 +1175,9 @@ footer .footer1 .redes a img{
     text-align: center;
 }
 
+.slides {
+    width: 300%;
+}
   .slide div {
     width: 33%;
 	padding-top: 20px;
