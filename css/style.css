@@ -616,13 +616,13 @@ article .textH{
 }
 
 .home4 article .line1{
-	border-right: 1px solid;
+	border-right: 1px solid #000;
     margin-right: 40px;
     padding: 30px;
 }
 
 .home4 article .line2{
-	border-left: 1px solid;
+	border-left: 1px solid #000;
 }
 
 .home5{
@@ -754,7 +754,7 @@ article .textH{
 }
 
 .slide img {
-    width: 200px;
+    width: 200px!important;
     display: block;
 }
 
@@ -775,7 +775,7 @@ article .textH{
 
     .manual-btn {
 	  background-color: #00000042;
-      padding: 5px;
+      padding: 7px;
       border-radius: 50%;
       cursor: pointer;
       transition: background 0.3s;
@@ -916,7 +916,7 @@ footer .footer1 .redes a img{
 	  }
 	  .home4 article .line1 {
         border-right: 0px solid !important;
-        border-bottom: 1px solid !important;
+        border-bottom: 1px solid #000!important;
         width: 33%;
     }
 	
@@ -1096,10 +1096,10 @@ footer .footer1 .redes a img{
   
   .home4 article .line1 {
         border-right: 0px solid;
-        border-bottom: 1px solid;
-        margin-right: 0px;
+        border-bottom: 1px solid #000;
         padding: 10px;
-		width: 33%;
+        width: 33% !important;
+        margin: 0;
     }
   
   .home4 article .line2 {
